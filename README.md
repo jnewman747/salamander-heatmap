@@ -1,6 +1,6 @@
-# Title: Salamander-heatmap
+# Kentucky Salamander Heatmap
 
-# Background Information
+## Background Information
 Salamanders are a group of amphibians categorized by elongate, slender bodies, blunt snouts and the presence of a tail. They are typically associated with aquatic habitats (wetlands, seeps, rivers, etc.) but can also be terrestrial.
 
 Salamanders are important because they represent the largest biomass of all vertebrates in the forest. Also, salamanders help control insect populations (particularly insects that humans consider pests like mosquitos). Further, salamanders can be used as “bioindicators” of ecosystem health due to their permeable skin.
@@ -10,12 +10,14 @@ Salamanders are important because they represent the largest biomass of all vert
  I am using species occurrence data from a database contributed to by pre-dominently citizen scientists. The purpose of this map is to create a heatmap of salamanders for the state of Kentucky. 
 
 
-# Data Management Suggestions
+## Data Management Suggestions
 Clone GitHub repository 
 
 Please create a folder called downloaded-data in a directory (e.g. Desktop) outside repositories tracked by GitHub
 
-# Download State Layers
+Download the MMQGIS plugin if it hasn't already been installed.
+
+## Download State Layers
 Navigate to the Census Bureau website: https://www.census.gov/cgi-bin/geo/shapefiles/index.php 
 
 ![image](https://user-images.githubusercontent.com/115514033/205518902-45ed4b4b-58a6-4834-b0b2-fd2c57f3fa80.png)
@@ -29,7 +31,7 @@ In the dropdown menu “Select a layer type”, select States (and equivalent). 
 SOURCE: Census Bureau (https://www.census.gov/cgi-bin/geo/shapefiles/index.php)
 
 
-# Download Coal Mining Layer 
+## Download Coal Mining Layer 
 Navigate to the Kentucky Mine Mapping website: http://minemaps.ky.gov/Maps/GISData. Download the MMIS Coal Mine Data and Locations file and save to the downloaded-data folder. 
 
 ![image](https://user-images.githubusercontent.com/115514033/205520720-6e9e9b06-b8cb-4a9a-8173-98c79e04ac14.png)
@@ -37,7 +39,7 @@ Navigate to the Kentucky Mine Mapping website: http://minemaps.ky.gov/Maps/GISDa
 
 SOURCE: Kentucky Mine Maps (http://minemaps.ky.gov/Maps/GISData) 
 
-# Download species data from Global Biodiversity Information Facility
+## Download species data from Global Biodiversity Information Facility
 First, visit the Kentucky Department of Fish and Wildlife Resources (KDFWR) amphibian website (https://fw.ky.gov/Wildlife/Pages/Amphibians.aspx) to get a comprehensive list of salamanders in the state
 
 ![image](https://user-images.githubusercontent.com/115514033/205519225-d5f1f120-1ae9-4411-b1a1-2b36bb7e3f46.png)
@@ -65,7 +67,7 @@ Click Continue and navigate to the Download options. There are three options ava
 Repeat these steps for all salamander species. Save all csv files in downloaded-data folder.
 
 
-# Species data will require manipulation prior to bringing into QGIS
+## Species data will require manipulation prior to bringing into QGIS
 The GBIF website exports data in csv files. When exported into the text file, the data becomes very messy and disorganized. Use the “Text to columns” in the Data Tab of Excel to split text into proper columns. Sort the data by state (Column G) to find records in Kentucky. 
 •	Remove unnecessary characters (e.g. rogue parenthesis following numeric values)
 
@@ -75,7 +77,7 @@ The GBIF website exports data in csv files. When exported into the text file, th
 
 
 
-# Bring Layers into QGIS
+## Bring Layers into QGIS
 •	Layer  Add Layer  Add Vector Layer
     o	Navigate to the specific shape file
 
@@ -89,10 +91,10 @@ The GBIF website exports data in csv files. When exported into the text file, th
 
 
 
-# Make a Heat Map
+## Make a Heat Map
 
 
-# Print Layout
+## Print Layout
 •	Name:
 
 •	Add a title, scale bar, North arrow, legend
