@@ -95,7 +95,7 @@ The GBIF website exports data in .csv files. When exported into the text file, t
 
 
 ## Bring Layers into QGIS
-Bring in state layer, county layer, and coal mine layer by clicking on 'Layer' - Add Layer - Add Vector Layer and then navigating to the specific shape file in the *downloaded-data* folder. 
+Bring in state layer, county layer, and coal mine layer by clicking on 'Layer' > Add Layer > Add Vector Layer and then navigating to the specific shape file in the *downloaded-data* folder. 
 
 Filter the state layer to Kentucky by right-clicking on the layer, click "Filter" 
 ![image](https://user-images.githubusercontent.com/115514033/205717495-90686063-b19f-4ef4-885c-58e8f1ede93e.png)                                                  
@@ -125,7 +125,7 @@ For the coal mine layer, use the newly filtered Kentucky border to clip to Kentu
 *Clipping the coal layer by the Kentucky boundary layer*
 
 
-Bring in species data by clicking on 'Layer' - Add Layer - Add Delimited Text Layer and then navigating to the specific csv file in the *downloaded-data* folder. Clip the layer to the Kentucky state boundary (sometimes coordinates don't get entered into the GBIF database correctly).
+Bring in species data by clicking on 'Layer' > Add Layer > Add Delimited Text Layer and then navigating to the specific csv file in the *downloaded-data* folder. Clip the layer to the Kentucky state boundary (sometimes coordinates don't get entered into the GBIF database correctly).
 
 ![image](https://user-images.githubusercontent.com/115514033/205724318-67dab1be-5d8b-4448-92a3-466cc46da940.png)                                               
 *Clipping the salamander occurrence data by the Kentucky boundary layer*
@@ -134,12 +134,21 @@ Bring in a basemap, for example Esri Terrain by double clicking on **Esri Terrai
 
 Change the CRS of the projection to be a Kentucky projection by clicking on 'Project' - Properties - CRS - EPSG 3089 (CRS for Kentucky). Double check all layers are in this projection. Layers can be edited individually by right-clicking them and changing their CRS.
 
-![image](https://user-images.githubusercontent.com/115514033/205727490-69335816-f2b1-4367-96ff-e5b9bce05984.png)                                                *Example of a filtered and clipped map of Kentucky with occurrence and coal mine data*
+![image](https://user-images.githubusercontent.com/115514033/205785928-a02a1657-e0b7-4509-a094-54d88172a6d9.png)                                                
+*Example of a filtered and clipped map of Kentucky with occurrence and coal mine data*
 
 
 
 ## Make a Heat Map
+Create a hexbin grid to cover area of interest
 
+•MMQGIS
+
+•Create > Create Grid Layer
+
+Spatially join species data by hexagons
+
+•Processing Toolbox > Vector General > Join attributes by location (summary)
 
 
 ## Print Layout
