@@ -134,7 +134,7 @@ Bring in a basemap, for example Esri Terrain by double clicking on **Esri Terrai
 
 Change the CRS of the projection to be a Kentucky projection by clicking on 'Project' - Properties - CRS - EPSG 3089 (CRS for Kentucky). Double check all layers are in this projection. Layers can be edited individually by right-clicking them and changing their CRS.
 
-![image](https://user-images.githubusercontent.com/115514033/205785928-a02a1657-e0b7-4509-a094-54d88172a6d9.png)                                                
+![image](https://user-images.githubusercontent.com/115514033/206876367-25b97899-d351-416f-805f-9376468908ec.png)                                                
 *Example of a filtered and clipped map of Kentucky with occurrence and coal mine data*
 
 
@@ -169,4 +169,3 @@ Spatially join species data by hexagons
 ## Linking to the Digital Map
 Please use this link to view the Kentucky Salamander Heatmap
 (https://github.com/jnewman747/salamander-heatmap) 
-(https://jnewman747.github.io/salamander-heatmap/)
