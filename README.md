@@ -163,3 +163,10 @@ Spatially join species data by hexagons
 •	Be sure to lock layers
 
 •	Save in two resolutions: 1) width of 1,200 px and 2) width of 8,000 px
+
+
+
+## Linking to the Digital Map
+Please use this link to view the Kentucky Salamander Heatmap
+(https://github.com/jnewman747/salamander-heatmap) 
+(https://jnewman747.github.io/salamander-heatmap/)
