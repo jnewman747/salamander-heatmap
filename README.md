@@ -92,11 +92,11 @@ SOURCE: Global Biodiversity Information Facility (https://www.gbif.us/data/?view
 ```
 
 ## Manipulation of Species Data 
-The GBIF website exports data in .csv files. When exported into the text file, the data becomes very messy and disorganized. Use the “Text to columns” in the Data Tab of Excel to split text into proper columns. Sort the data by state (Column G) to find records in Kentucky. Remove unnecessary characters (e.g. rogue parenthesis following numeric values).
+The GBIF website exports data in .csv files. When exported into the text file, the data becomes very messy and disorganized. Use the “Text to columns” in the Data Tab of Excel to split text into proper columns. Sort the data by "stateProvince" column to find records in Kentucky. Remove unnecessary characters (e.g. rogue parenthesis following numeric values).
 
-•	Kept the first XX fields, removed XX fields
+Keep the following fields: gbifID, datasetKey, species, countryCode, locality, stateProvince, occurrenceStatus, decimalLatitude, decimalLongitude, coordinateUncertaintyInMeters, day, month, year. Feel free to keep any other fields of interest. 
 
-•	Merge all data into one master file for simplicity and save in the *downloaded-data* folder
+Merge all data into one master .csv file for simplicity and save in the *downloaded-data* folder.
 
 
 
