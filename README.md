@@ -13,6 +13,12 @@ I am using species occurrence data from a database contributed to by pre-dominen
 
 
 
+## Linking to the Digital Map
+Please use this link to view the finished Kentucky Salamander Heatmap
+(https://jnewman747.github.io/salamander-heatmap/) 
+
+
+
 ## Data Management Suggestions
 1) Clone GitHub repository. 
 
@@ -164,8 +170,3 @@ Spatially join species data by hexagons
 
 •	Save in two resolutions: 1) width of 1,200 px and 2) width of 8,000 px
 
-
-
-## Linking to the Digital Map
-Please use this link to view the Kentucky Salamander Heatmap
-(https://github.com/jnewman747/salamander-heatmap) 
