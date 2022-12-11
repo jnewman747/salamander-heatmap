@@ -181,7 +181,7 @@ Place the coal mine layer above the county layer in the Layers window. Place the
 ## Print Layout
 •	Add a title, scale bar, North arrow, legend
 
-•	Add text: Author, QGIS version, NewMaps, Sources, Tools used, Projection, Map Scale
+•	Add text: Author, QGIS version, NewMaps, Sources, Tools used, Hexbin size, Projection, Map Scale
 
 •	Edit fonts and sizes to make more readable
 
