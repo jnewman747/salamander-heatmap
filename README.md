@@ -178,6 +178,8 @@ Place the coal mine layer above the county layer in the Layers window. Place the
 ![image](https://user-images.githubusercontent.com/115514033/206885044-fd5e60c8-5135-4ff0-9a69-5343a719e94a.png)                                                                        
 *Example of a final map layout for salamander occurrence data in Kentucky*
 
+
+
 ## Print Layout
 •	Add a title, scale bar, North arrow, legend
 
@@ -189,3 +191,15 @@ Place the coal mine layer above the county layer in the Layers window. Place the
 
 •	Save in two resolutions: 1) width of 1,200 px and 2) width of 8,000 px
 
+
+
+## Conclusions and Takeaways
+A general takeaway from this map is that salamanders tend to be more abundant away from coal mines. However, this should be taken with a grain of salt.
+
+It's important to remember that the species occurrence data in this map was collected by citizen scientists and should be treated as such. For example, many of the entries in the Global Biodiversity Information Facility lack spatial information and therefore don't appear on this map. Additionally, when I filtered the data to Kentucky in Excel, some data still displayed in other states when mapped in QGIS. This could have been an example of user error with inputting incorrect coordinates into the Global Biodiversity Information Facility database or selecting the incorrect state. 
+
+It's also important to remember that this is not a comprehensive list of occurrence data. For example, the Global Biodiversity Information Facility had no records for hellbenders or three-toed amphiumas which are known to occur in the state of Kentucky. Many naturalists, researchers, academics, and state agencies may not even use this website to enter data.
+
+Future maps could consider using data from iNaturalist (https://www.inaturalist.org/), although the data is often obscured to protect threatened and endangered species. Published papers (e.g. peer review manuscripts, theses, and disertations) could also be considered. Another data source that could be considered is a state agency, however, mappers should be aware that they will likely have to sign data-sharing agreements and may have restrictions on where they can publish their maps. 
+
+For the coal mining data, future maps could consider using earlier data as this data set only includes data as far back as 2004. 
