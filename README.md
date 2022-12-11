@@ -9,7 +9,7 @@ Salamanders are important because they represent the largest biomass of all vert
 
 The International Union for Conservation of Nature (IUCN) suggests that 41% of amphibians are threatened with extinction. Kentucky has over 30 species of salamanders occurring within its borders. However, one major threat to amphibians in Kentucky is coal mining (mountain top removal).
  
-I am using species occurrence data from a database contributed to by pre-dominently citizen scientists. The purpose of this map is to create a heatmap of salamanders for the state of Kentucky. 
+I am using species occurrence data from a database contributed to by predominantly citizen scientists. The purpose of this map is to create a heatmap of salamanders for the state of Kentucky. 
 
 
 
@@ -194,11 +194,11 @@ Place the coal mine layer above the county layer in the Layers window. Place the
 
 
 ## Conclusions and Takeaways
-A general takeaway from this map is that salamanders tend to be more abundant away from coal mines. However, this should be taken with a grain of salt.
+A general takeaway from this map is that salamanders tend to be more abundant away from coal mines. 
 
-It's important to remember that the species occurrence data in this map was collected by citizen scientists and should be treated as such. For example, many of the entries in the Global Biodiversity Information Facility lack spatial information and therefore don't appear on this map. Additionally, when I filtered the data to Kentucky in Excel, some data still displayed in other states when mapped in QGIS. This could have been an example of user error with inputting incorrect coordinates into the Global Biodiversity Information Facility database or selecting the incorrect state. 
+However, this should be received with some caution. It's important to remember that the species occurrence data in this map was collected predominantly by citizen scientists and should be treated as such. For example, many of the entries in the Global Biodiversity Information Facility lack spatial information and therefore don't appear on this map. Additionally, when I filtered the data to Kentucky in Excel, some data still displayed in other states when mapped in QGIS. This could have been an example of user error with inputting incorrect coordinates into the Global Biodiversity Information Facility database or selecting the incorrect state. Further, the error surrounding the coordinates within the database was high, with a maximum error of 2817774m. This could be a result of a number of things such as human error, purposefully obscuring data, lack of up-to-date scientific equipment, etc.
 
-It's also important to remember that this is not a comprehensive list of occurrence data. For example, the Global Biodiversity Information Facility had no records for hellbenders or three-toed amphiumas which are known to occur in the state of Kentucky. Many naturalists, researchers, academics, and state agencies may not even use this website to enter data.
+It's also important to remember that this is not a comprehensive list of occurrence data. For example, the Global Biodiversity Information Facility had no records for hellbenders or three-toed amphiumas which are known to occur in the state of Kentucky. It is likely that citizen scientists may not have full access to coal mine sites. Many naturalists, researchers, academics, and state agencies may not even use this website to enter data, but instead monitor the site for species occurrence data.
 
 Future maps could consider using data from iNaturalist (https://www.inaturalist.org/), although the data is often obscured to protect threatened and endangered species. Published papers (e.g. peer review manuscripts, theses, and disertations) could also be considered. Another data source that could be considered is a state agency, however, mappers should be aware that they will likely have to sign data-sharing agreements and may have restrictions on where they can publish their maps. 
 
