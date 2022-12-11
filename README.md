@@ -138,7 +138,7 @@ Bring in species data by clicking on 'Layer' > Add Layer > Add Delimited Text La
 
 Bring in a basemap, for example Esri Terrain by double clicking on **Esri Terrain** in the XYZ Tiles drop down menu in the QGIS Browser.
 
-Change the CRS of the projection to be a Kentucky projection by clicking on 'Project' - Properties - CRS - EPSG 3089 (CRS for Kentucky). Double check all layers are in this projection. Layers can be edited individually by right-clicking them and changing their CRS.
+Change the CRS of the projection to be a Kentucky projection by clicking on 'Project' - Properties - CRS - EPSG 3089 (CRS for Kentucky). Double check all layers are in this projection. Layers can be edited individually by right-clicking them and changing their CRS. Save the salamander and coal layers as GeoJsons by right-clicking each layer individually and clicking Export > Save Feature As > Select "GeoJSON" as the format and select EPSG 3089 as the CRS.
 
 ![image](https://user-images.githubusercontent.com/115514033/206876367-25b97899-d351-416f-805f-9376468908ec.png)                                                
 *Example of a filtered and clipped map of Kentucky with occurrence and coal mine data*
@@ -146,20 +146,39 @@ Change the CRS of the projection to be a Kentucky projection by clicking on 'Pro
 
 
 ## Make a Heat Map
-Create a hexbin grid to cover area of interest
+Create a hexagonal grid to cover area of interest. Click the MMQGIS plugin > Create > Create Grid Layer. For Units choose "Layer Units", Extent choose "Layer Extent" and for Layer choose the Kentucky state border layer. In the Y spacing field, I am using 5 miles (5 x 5280 = 26400) for this particular hexgrid.
 
-•MMQGIS
+![image](https://user-images.githubusercontent.com/115514033/206881821-7cdf81b9-ddaf-406c-9dcc-07b1cbda3e35.png)
+*Creating a hexgrid of 5 miles*
 
-•Create > Create Grid Layer
+To spatial join the species occurrence data, use the Join attributes by location (summary) tool. This tool is accessed by clicking on the Processing Toolbox > Vector General > Join attributes by location (summary). Select the Hexgrid layer in the "Join to features in" field and the Salamander data in the "By comparing to" field. Check "intersect". For fields to summarise, choose "species" and for fields to calculate choose "sum" and "count."
 
-Spatially join species data by hexagons
+![image](https://user-images.githubusercontent.com/115514033/206882903-ec146eb6-039c-434c-9a95-8799653c82dd.png)                                                                          
+*Using the Join attributes tool*
 
-•Processing Toolbox > Vector General > Join attributes by location (summary)
 
+![image](https://user-images.githubusercontent.com/115514033/206882825-905e36c0-f353-47f1-9814-7493b1698113.png)                                                                        
+*Example of the salamander species occurrence data hexbin data prior to being classified*
+
+
+Classify the new hexbin layer by right-clicking the layer (called "Joined layer"), going into its properties and clicking on Symbology. Select "Graduated" for the classification field and then "species count for Value. Select "Natural Breaks (Jenks)" as the Mode. Make sure there are 5 classes. Click "Classify". Choose a color ramp to best describe the heat map. I selected a "cold" color ramp in this scenario due to the smaller categories being highly represented on this map. 
+
+![image](https://user-images.githubusercontent.com/115514033/206884744-d1f69f21-b95b-4927-b3ac-1b37bb357a1a.png)                                                                       
+*Choosing the symbology for the heatmap*
+
+Also, edit the stroke style of the hexagons so they don't have lines around them. This can be done in the symbology tab by selecting "no pen" for the stroke style.
+
+Next, change the color of the background screen by clicking on Project > Properties > Background color. In this map, I made it a dark gray.
+
+Then, change the color of the coal mine layer and edit the stroke style ("no pen").
+
+Place the coal mine layer above the county layer in the Layers window. Place the newly classified hexbin heatmap layer above the coal layer in the Layers window.
+
+
+![image](https://user-images.githubusercontent.com/115514033/206885044-fd5e60c8-5135-4ff0-9a69-5343a719e94a.png)                                                                        
+*Example of a final map layout for salamander occurrence data in Kentucky*
 
 ## Print Layout
-•	Name:
-
 •	Add a title, scale bar, North arrow, legend
 
 •	Add text: Author, QGIS version, NewMaps, Sources, Tools used, Projection, Map Scale
