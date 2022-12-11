@@ -189,7 +189,7 @@ Place the coal mine layer above the county layer in the Layers window. Place the
 
 •	Be sure to lock layers
 
-•	Save in two resolutions: 1) width of 1,200 px and 2) width of 8,000 px
+•	Create a *maps* folder and save the maps in two resolutions to this folder: 1) width of 1,200 px and 2) width of 8,000 px
 
 
 
