@@ -20,7 +20,7 @@ Please use this link to view the finished Kentucky Salamander Heatmap
 
 
 ## Data Management Suggestions
-1) Clone GitHub repository. 
+1) Clone GitHub repository via GitHub Desktop. 
 
 2) Please create a folder called *downloaded-data* in a directory (e.g. Desktop) outside repositories tracked by GitHub.
 
@@ -136,7 +136,7 @@ Bring in species data by clicking on 'Layer' > Add Layer > Add Delimited Text La
 ![image](https://user-images.githubusercontent.com/115514033/205724318-67dab1be-5d8b-4448-92a3-466cc46da940.png)                                               
 *Clipping the salamander occurrence data by the Kentucky boundary layer*
 
-Bring in a basemap, for example Esri Terrain by double clicking on **Esri Terrain** in the XYZ Tiles drop down menu in the QGIS Browser.
+Bring in a basemap, for example Esri Terrain by double clicking on **Esri Terrain** in the XYZ Tiles drop down menu in the QGIS Browser. I will only be using this layer temporarily.
 
 Change the CRS of the projection to be a Kentucky projection by clicking on 'Project' - Properties - CRS - EPSG 3089 (CRS for Kentucky). Double check all layers are in this projection. Layers can be edited individually by right-clicking them and changing their CRS. Save the salamander and coal layers as GeoJsons by right-clicking each layer individually and clicking Export > Save Feature As > Select "GeoJSON" as the format and select EPSG 3089 as the CRS.
 
@@ -146,7 +146,7 @@ Change the CRS of the projection to be a Kentucky projection by clicking on 'Pro
 
 
 ## Make a Heat Map
-Create a hexagonal grid to cover area of interest. Click the MMQGIS plugin > Create > Create Grid Layer. For Units choose "Layer Units", Extent choose "Layer Extent" and for Layer choose the Kentucky state border layer. In the Y spacing field, I am using 5 miles (5 x 5280 = 26400) for this particular hexgrid.
+Create a hexagonal grid to cover area of interest. Click the MMQGIS plugin > Create > Create Grid Layer. For Units choose "Layer Units", Extent choose "Layer Extent" and for Layer choose the Kentucky state border layer. In the Y spacing field, I am using 5 miles (5 x 5280 = 26400) for this particular hexgrid. (Note: at this stage, I removed the ESRI basemap).
 
 ![image](https://user-images.githubusercontent.com/115514033/206881821-7cdf81b9-ddaf-406c-9dcc-07b1cbda3e35.png)
 *Creating a hexgrid of 5 miles*
@@ -190,6 +190,8 @@ Place the coal mine layer above the county layer in the Layers window. Place the
 •	Be sure to lock layers
 
 •	Create a *maps* folder and save the maps in two resolutions to this folder: 1) width of 1,200 px and 2) width of 8,000 px
+
+•	Use Github Desktop to push commits to repository on GitHub
 
 
 
