@@ -153,7 +153,7 @@ Create a hexagonal grid to cover area of interest. Click the MMQGIS plugin > Cre
 
 To spatial join the species occurrence data, use the Join attributes by location (summary) tool. This tool is accessed by clicking on the Processing Toolbox > Vector General > Join attributes by location (summary). Select the Hexgrid layer in the "Join to features in" field and the Salamander data in the "By comparing to" field. Check "intersect". For fields to summarise, choose "species" and for fields to calculate choose "sum" and "count."
 
-![image](https://user-images.githubusercontent.com/115514033/206882903-ec146eb6-039c-434c-9a95-8799653c82dd.png)                                                                          
+![image](https://user-images.githubusercontent.com/115514033/206886632-3ae4476f-9e11-428e-8c60-45cd24e7cec7.png)                                                  
 *Using the Join attributes tool*
 
 
