@@ -9,7 +9,13 @@ Salamanders are important because they represent the largest biomass of all vert
 
 The International Union for Conservation of Nature (IUCN) suggests that 41% of amphibians are threatened with extinction. Kentucky has over 30 species of salamanders occurring within its borders. However, one major threat to amphibians in Kentucky is coal mining (mountain top removal).
  
-I am using species occurrence data from a database contributed to by pre-dominently citizen scientists. The purpose of this map is to create a heatmap of salamanders for the state of Kentucky. 
+I am using species occurrence data from a database contributed to by predominantly citizen scientists. The purpose of this map is to create a heatmap of salamanders for the state of Kentucky. 
+
+
+
+## Linking to the Digital Map
+Please use this link to view the finished Kentucky Salamander Heatmap
+(https://jnewman747.github.io/salamander-heatmap/) 
 
 
 
@@ -86,11 +92,11 @@ SOURCE: Global Biodiversity Information Facility (https://www.gbif.us/data/?view
 ```
 
 ## Manipulation of Species Data 
-The GBIF website exports data in .csv files. When exported into the text file, the data becomes very messy and disorganized. Use the “Text to columns” in the Data Tab of Excel to split text into proper columns. Sort the data by state (Column G) to find records in Kentucky. Remove unnecessary characters (e.g. rogue parenthesis following numeric values).
+The GBIF website exports data in .csv files. When exported into the text file, the data becomes very messy and disorganized. Use the “Text to columns” in the Data Tab of Excel to split text into proper columns. Sort the data by "stateProvince" column to find records in Kentucky. Remove unnecessary characters (e.g. rogue parenthesis following numeric values).
 
-•	Kept the first XX fields, removed XX fields
+Keep the following fields: gbifID, datasetKey, species, countryCode, locality, stateProvince, occurrenceStatus, decimalLatitude, decimalLongitude, coordinateUncertaintyInMeters, day, month, year. Feel free to keep any other fields of interest. 
 
-•	Merge all data into one master file for simplicity and save in the *downloaded-data* folder
+Merge all data into one master .csv file for simplicity and save in the *downloaded-data* folder.
 
 
 
@@ -132,34 +138,68 @@ Bring in species data by clicking on 'Layer' > Add Layer > Add Delimited Text La
 
 Bring in a basemap, for example Esri Terrain by double clicking on **Esri Terrain** in the XYZ Tiles drop down menu in the QGIS Browser.
 
-Change the CRS of the projection to be a Kentucky projection by clicking on 'Project' - Properties - CRS - EPSG 3089 (CRS for Kentucky). Double check all layers are in this projection. Layers can be edited individually by right-clicking them and changing their CRS.
+Change the CRS of the projection to be a Kentucky projection by clicking on 'Project' - Properties - CRS - EPSG 3089 (CRS for Kentucky). Double check all layers are in this projection. Layers can be edited individually by right-clicking them and changing their CRS. Save the salamander and coal layers as GeoJsons by right-clicking each layer individually and clicking Export > Save Feature As > Select "GeoJSON" as the format and select EPSG 3089 as the CRS.
 
-![image](https://user-images.githubusercontent.com/115514033/205785928-a02a1657-e0b7-4509-a094-54d88172a6d9.png)                                                
+![image](https://user-images.githubusercontent.com/115514033/206876367-25b97899-d351-416f-805f-9376468908ec.png)                                                
 *Example of a filtered and clipped map of Kentucky with occurrence and coal mine data*
 
 
 
 ## Make a Heat Map
-Create a hexbin grid to cover area of interest
+Create a hexagonal grid to cover area of interest. Click the MMQGIS plugin > Create > Create Grid Layer. For Units choose "Layer Units", Extent choose "Layer Extent" and for Layer choose the Kentucky state border layer. In the Y spacing field, I am using 5 miles (5 x 5280 = 26400) for this particular hexgrid.
 
-•MMQGIS
+![image](https://user-images.githubusercontent.com/115514033/206881821-7cdf81b9-ddaf-406c-9dcc-07b1cbda3e35.png)
+*Creating a hexgrid of 5 miles*
 
-•Create > Create Grid Layer
+To spatial join the species occurrence data, use the Join attributes by location (summary) tool. This tool is accessed by clicking on the Processing Toolbox > Vector General > Join attributes by location (summary). Select the Hexgrid layer in the "Join to features in" field and the Salamander data in the "By comparing to" field. Check "intersect". For fields to summarise, choose "species" and for fields to calculate choose "sum" and "count."
 
-Spatially join species data by hexagons
+![image](https://user-images.githubusercontent.com/115514033/206886632-3ae4476f-9e11-428e-8c60-45cd24e7cec7.png)                                                  
+*Using the Join attributes tool*
 
-•Processing Toolbox > Vector General > Join attributes by location (summary)
+
+![image](https://user-images.githubusercontent.com/115514033/206882825-905e36c0-f353-47f1-9814-7493b1698113.png)                                                                        
+*Example of the salamander species occurrence data hexbin data prior to being classified*
+
+
+Classify the new hexbin layer by right-clicking the layer (called "Joined layer"), going into its properties and clicking on Symbology. Select "Graduated" for the classification field and then "species count for Value. Select "Natural Breaks (Jenks)" as the Mode. Make sure there are 5 classes. Click "Classify". Choose a color ramp to best describe the heat map. I selected a "cold" color ramp in this scenario due to the smaller categories being highly represented on this map. 
+
+![image](https://user-images.githubusercontent.com/115514033/206884744-d1f69f21-b95b-4927-b3ac-1b37bb357a1a.png)                                                                       
+*Choosing the symbology for the heatmap*
+
+Also, edit the stroke style of the hexagons so they don't have lines around them. This can be done in the symbology tab by selecting "no pen" for the stroke style.
+
+Next, change the color of the background screen by clicking on Project > Properties > Background color. In this map, I made it a dark gray.
+
+Then, change the color of the coal mine layer and edit the stroke style ("no pen").
+
+Place the coal mine layer above the county layer in the Layers window. Place the newly classified hexbin heatmap layer above the coal layer in the Layers window.
+
+
+![image](https://user-images.githubusercontent.com/115514033/206885044-fd5e60c8-5135-4ff0-9a69-5343a719e94a.png)                                                                        
+*Example of a final map layout for salamander occurrence data in Kentucky*
+
 
 
 ## Print Layout
-•	Name:
-
 •	Add a title, scale bar, North arrow, legend
 
-•	Add text: Author, QGIS version, NewMaps, Sources, Tools used, Projection, Map Scale
+•	Add text: Author, QGIS version, NewMaps, Sources, Tools used, Hexbin size, Projection, Map Scale
 
 •	Edit fonts and sizes to make more readable
 
 •	Be sure to lock layers
 
-•	Save in two resolutions: 1) width of 1,200 px and 2) width of 8,000 px
+•	Create a *maps* folder and save the maps in two resolutions to this folder: 1) width of 1,200 px and 2) width of 8,000 px
+
+
+
+## Conclusions and Takeaways
+A general takeaway from this map is that salamanders tend to be more abundant away from coal mines. 
+
+However, this should be received with some caution. It's important to remember that the species occurrence data in this map was collected predominantly by citizen scientists and should be treated as such. For example, many of the entries in the Global Biodiversity Information Facility lack spatial information and therefore don't appear on this map. Additionally, when I filtered the data to Kentucky in Excel, some data still displayed in other states when mapped in QGIS. This could have been an example of user error with inputting incorrect coordinates into the Global Biodiversity Information Facility database or selecting the incorrect state. Further, the error surrounding the coordinates within the database was high, with a maximum error of 2817774m. This could be a result of a number of things such as human error, purposefully obscuring data, lack of up-to-date scientific equipment, etc.
+
+It's also important to remember that this is not a comprehensive list of occurrence data. For example, the Global Biodiversity Information Facility had no records for hellbenders or three-toed amphiumas which are known to occur in the state of Kentucky. It is likely that citizen scientists may not have full access to coal mine sites. Many naturalists, researchers, academics, and state agencies may not even use this website to enter data, but instead monitor the site for species occurrence data.
+
+Future maps could consider using data from iNaturalist (https://www.inaturalist.org/), although the data is often obscured to protect threatened and endangered species. Published papers (e.g. peer review manuscripts, theses, and disertations) could also be considered. Another data source that could be considered is a state agency, however, mappers should be aware that they will likely have to sign data-sharing agreements and may have restrictions on where they can publish their maps. 
+
+For the coal mining data, future maps could consider using earlier data as this data set only includes data as far back as 2004. 
